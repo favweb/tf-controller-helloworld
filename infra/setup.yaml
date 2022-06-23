@@ -3,6 +3,7 @@ apiVersion: source.toolkit.fluxcd.io/v1beta1
 kind: GitRepository
 metadata:
   name: helloworld-tf
+  namespace: dev
 spec:
   interval: 1m
   url: https://github.com/favweb/tf-controller-helloworld/ #https://github.com/flux-subsystem-argo/tf-controller-helloworld
@@ -20,5 +21,6 @@ spec:
   sourceRef:
     kind: GitRepository
     name: helloworld-tf
+    namespace: dev
   writeOutputsToSecret:
     name: helloworld-outputs
